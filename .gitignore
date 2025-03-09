@@ -1,0 +1,5 @@
+/myenv
+/dist
+/build
+/__pycache__
+*.pyc
