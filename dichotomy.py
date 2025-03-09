@@ -11,8 +11,10 @@ list_equations = ['arccos(x) + 1','x**2 - 2','x**3 - 4','e^(-x^(2)) - 2', 'x * l
 def safe_f_trigonometry(f, x):
     function_name = getattr(f, "__name__", "")
     if function_name in ["acos", "asin"] and not (-1 <= x <= 1):
+        print(f'Недопустимое значение функции {function_name} в точке X = {x}')
         return float('nan')
     elif function_name in ["asec", "acsc"] and not (abs(x) >= 1):
+        print(f'Недопустимое значение функции {function_name} в точке X = {x}')
         return float('nan')
     else:
         return f(x)  

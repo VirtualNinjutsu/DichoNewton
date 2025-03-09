@@ -1,6 +1,8 @@
 # Main file to run the program / Главный файл для запуска программы
 import dichotomy, newton, newton_for_syst, gui
 import tkinter as tk
+import matplotlib
+matplotlib.use('TkAgg')
 
 # Greeting function / Функция приветствия
 def greeting():
