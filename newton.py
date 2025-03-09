@@ -3,10 +3,7 @@ import numpy as np
 import sympy as sp
 from dichotomy import search_range
 import tkinter as tk
-<<<<<<< HEAD
 from dichotomy import convert_to_sympy, safe_f_trigonometry
-=======
->>>>>>> 20e02dceabe7b5d44b37564cf0aa5ee544262ca0
 
 # Function to approximate the root / Функция для приближения корня
 def aproxx(function):
@@ -27,15 +24,10 @@ def newton(function, accuracy, output_widget=None):
         else:
             print(message)
 
-<<<<<<< HEAD
     function = convert_to_sympy(function)
     aproxx_x = aproxx(function)
     if aproxx_x is None:
         print_output('Не удалось найти начальное приближение.')
-=======
-    aproxx_x = aproxx(function)
-    if aproxx_x is None:
->>>>>>> 20e02dceabe7b5d44b37564cf0aa5ee544262ca0
         return
     x = sp.symbols('x')
     f = sp.sympify(function)
@@ -46,7 +38,6 @@ def newton(function, accuracy, output_widget=None):
     max_itter = 100
     flag = False
     for n in range(max_itter):
-<<<<<<< HEAD
         try:
             fx = f(xn)
             fx_diff = f_diff(xn)
@@ -75,20 +66,3 @@ if __name__ == '__main__':
     function = 'x**2 - 2'
     accuracy = 1e-6
     newton(function, accuracy)
-=======
-        fx = f(xn)
-        fx_diff = f_diff(xn)
-        xn_new = xn - fx/fx_diff
-        if abs(f(xn_new)) < accuracy:
-            flag = True
-            break
-        xn = xn_new
-    if flag:
-        message = f'''Решение уравнения: {function} :
-                  X = {xn_new}
-                  '''
-        print_output(message)
-        print_output(f"Проверка: f({xn_new}) = {f(xn_new)}")
-    else:
-        print_output('Не удалось найти корень.')
->>>>>>> 20e02dceabe7b5d44b37564cf0aa5ee544262ca0
